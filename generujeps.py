@@ -44,7 +44,7 @@ class Eps:
         self.epsfile.write(str(r)+' '+str(g)+' '+str(b)+' setrgbcolor \n')
             
     def setgray(self, g):
-        self.epsfile.write(str(g)+' setgray')
+        self.epsfile.write(str(g)+' setgray \n')
 
     def fontsize(self, size):
         self.epsfile.write(str(size)+' scalefont \n')
