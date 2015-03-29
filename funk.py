@@ -1,0 +1,1 @@
+def funkcja(x):    return 3**x
