@@ -1,6 +1,6 @@
 from generujeps import Eps
-
 functionfile = open("funk.py", "w")
+functionfile.write("from math import sqrt,acos,asin,atan,cos,sin,tan,acosh,asinh,gamma \n")
 functionfile.write("def funkcja(x):")
 f = raw_input("Podaj funkcje: f(x) = ")
 #Z jakiegos powodu x**3 nie dziala. Nie wiem dlaczego ;_;, za to dzialaja wykladnicze, kwadratowe i liniowe.
@@ -57,13 +57,15 @@ plik.stroke()
 
 
 plik.newpath()
-plik.moveto(-1, funkcja(-50.1)*10+500)
-
 plik.linewidth(3)
 plik.setcolor( 1, 0, 1)
 
-for i in range(1000):
-    plik.continueline(i, funkcja((i-500)/10.0)*10.0+500)
+for i in range(999):
+    try:
+        plik.drawline(i, funkcja((i-500)/10.0)*10.0+500, i+1, funkcja((i+1-500)/10.0)*10.0+500)
+    except ValueError:
+        pass
+
 plik.closepath()
 plik.stroke()
 
